@@ -104,4 +104,4 @@ Set up a host-only or NAT network with static IPs:
 ## 📚 References
 
 - [PostgreSQL Streaming Replication Documentation](https://www.postgresql.org/docs/current/warm-standby.html)  
-- [Ubuntu Server Installation Guide](https://ubuntu.com/server/docs)
+- [Ubuntu Server Installation](https://ubuntu.com/download/desktop/thank-you?version=24.04.3&architecture=amd64&lts=true)
