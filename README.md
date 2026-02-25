@@ -1,5 +1,11 @@
 # 🗄️ postgresql-master-slave-setup
 
+- 🔵 PostgreSQL Master (Primary) Database  
+- 🟢 PostgreSQL Slave (Read Replica) Database  
+- 🚀 Spring Boot Application  
+- 🔀 Automatic Read/Write Routing using AOP  
+- 📡 Streaming Replication  
+
 ## 📄 Description
 
 This repository contains documentation and instructions to set up a **PostgreSQL Master–Slave (Primary–Replica)** environment using multiple Ubuntu virtual machines. It is designed for **learning, testing, and small-scale development purposes**.
@@ -105,3 +111,10 @@ Set up a host-only or NAT network with static IPs:
 
 - [PostgreSQL Streaming Replication Documentation](https://www.postgresql.org/docs/current/warm-standby.html)  
 - [Ubuntu Server Installation](https://ubuntu.com/download/desktop/thank-you?version=24.04.3&architecture=amd64&lts=true)
+
+## 💼 Connect & Project Repository
+
+If you want to connect or see the Java practice project:
+
+- 🔗 **LinkedIn Profile:** [Your LinkedIn](https://www.linkedin.com/posts/vikas-kumar-10b8822a9_suhora-activity-7158879542592364544-Rw02)  
+- 🔗 **Java Repository:** [Master–Slave Spring Boot Project](https://github.com/viku01999/master-slave-setup)
