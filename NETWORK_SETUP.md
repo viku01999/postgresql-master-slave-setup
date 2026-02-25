@@ -21,8 +21,8 @@ Each VM should have the following:
 
 | VM   | Role   | Host-only IP       |
 |------|--------|------------------|
-| VM1  | Master | 192.168.56.101   |
-| VM2  | Slave  | 192.168.56.102   |
+| VM1  | Master | 192.168.30.101   |
+| VM2  | Slave  | 192.168.30.102   |
 
 ---
 
@@ -64,7 +64,7 @@ Each VM should have the following:
 ## 4️⃣ Assign Static IPs Inside Each VM
 
 This guide shows how to set up a **Master–Slave network configuration** locally using **VirtualBox VMs** on a single host machine.  
-The setup uses an **isolated host-only network (192.168.56.x)** to avoid conflicts with your office LAN and VPN.
+The setup uses an **isolated host-only network (192.168.30.x)** to avoid conflicts with your office LAN and VPN.
 
 - If VMs present into anotehr system then use adapter `bridge` not `host only`
 
@@ -74,9 +74,9 @@ The setup uses an **isolated host-only network (192.168.56.x)** to avoid conflic
 
 | Machine | Role   | IP (Replication) | Notes |
 |---------|--------|----------------|-------|
-| Host    | Master | 192.168.56.100 | Office LAN IP (192.168.xx.x) unchanged |
-| VM1     | Slave1 | 192.168.56.101 | Host-only network for replication |
-| VM2     | Slave2 | 192.168.56.102 | Host-only network for replication |
+| Host    | Master | 192.168.30.100 | Office LAN IP (192.168.xx.x) unchanged |
+| VM1     | Slave1 | 192.168.30.101 | Host-only network for replication |
+| VM2     | Slave2 | 192.168.30.102 | Host-only network for replication |
 
 ## Host Machine Setup (Master)
 
@@ -112,7 +112,7 @@ network:
       dhcp6: true
     enp0s8:   # Host-only adapter for replication
       dhcp4: no
-      addresses: [192.168.56.101/24]
+      addresses: [192.168.30.101/24]
 ```
 
 ## Write configuration inside vm2
@@ -130,7 +130,7 @@ network:
       dhcp6: true
     enp0s8:   # Host-only adapter for replication
       dhcp4: no
-      addresses: [192.168.56.102/24]
+      addresses: [192.168.30.102/24]
 ```
 
 ## Run this in both vms
@@ -146,8 +146,8 @@ network:
 ### From **Host**
 
 ```bash
-ping 192.168.56.101  # VM1
-ping 192.168.56.102  # VM2
+ping 192.168.30.101  # VM1
+ping 192.168.30.102  # VM2
 ```
 
 ## file
@@ -157,8 +157,8 @@ ping 192.168.56.102  # VM2
 ### From **vm1**
 
 ```bash
-ping 192.168.56.100  # Host
-ping 192.168.56.102  # VM2
+ping 192.168.30.100  # Host
+ping 192.168.30.102  # VM2
 ```
 
 ![ifconfig_vm1_machine](/media/vm1_machine.png)
@@ -166,8 +166,8 @@ ping 192.168.56.102  # VM2
 ### From **vm2**
 
 ```bash
-ping 192.168.56.100  # Host
-ping 192.168.56.101  # VM1
+ping 192.168.30.100  # Host
+ping 192.168.30.101  # VM1
 ```
 
 ![ifconfig_vm2_machine](/media/vm2_machine.png)
